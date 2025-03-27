@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Score</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; margin: 0; padding: 20px;">
+    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; margin: auto;">
+        <h1 style="color: #333;">Resume Score</h1>
+        <p style="color: #666;">Your resume's match score with the job description:</p>
+        
+        <div style="font-size: 24px; font-weight: bold; 
+            background-color: {% if score >= 9 %} green {% elif score >= 7 %} orange {% else %} red {% endif %}; 
+            color: white; padding: 10px; border-radius: 5px; display: inline-block; margin: 10px 0;">
+            {{ score }}/10
+        </div>
+        
+        <div style="font-size: 40px; margin-top: 10px;">
+            {% if score >= 9 %}
+                🎯🔥
+            {% elif score >= 6 %}
+                🙂
+            {% else %}
+                😞
+            {% endif %}
+        </div>
+
+        <p style="color: #333; font-weight: bold; margin-top: 10px;">
+            {% if score >= 9 %}
+                ✅ Your resume is **excellent** and meets the job requirements perfectly!
+            {% elif score >= 6 %}
+                ⚡ Your resume is **good**, but there's room for improvement to make it **excellent**.
+            {% else %}
+                ❌ Consider **improving your resume** by adding more relevant skills and experience.
+            {% endif %}
+        </p>
+
+        <br>
+        <a href="/" style="display: inline-block; margin-top: 15px; text-decoration: none; background-color: #007BFF; color: white; padding: 10px 20px; border-radius: 5px;">
+            Upload Another Resume
+        </a>
+    </div>
+</body>
+</html>
